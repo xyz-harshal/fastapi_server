@@ -1,2 +1,6 @@
 new.py
-./env
+env/
+*.pyc
+__pycache__/
+*.log
+*.env
