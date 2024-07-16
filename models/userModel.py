@@ -1,8 +1,9 @@
 from pydantic import BaseModel
 
-class userRequestModel(BaseModel):
+class userReqMod(BaseModel):
     email:str
     password:str
 
-class userResponseModel(BaseModel):
+class userResMod(BaseModel):
     error:bool
+    token:str

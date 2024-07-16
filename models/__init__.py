@@ -1,1 +1,1 @@
-from .userModel import userRequestModel,userResponseModel
+from .userModel import userReqMod,userResMod
