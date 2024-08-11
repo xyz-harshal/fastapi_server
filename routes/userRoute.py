@@ -20,7 +20,7 @@ async def login(req:userReqMod,db:db_dependancy):
     else:
         return {"error":True,"token":""}
 
-
+Base.metadata.create_all(bind=engine)
 @router.post("/register",response_model=userResMod)
 async def register(req:userReqMod,db:db_dependancy):
     user=db.query(Peoples)

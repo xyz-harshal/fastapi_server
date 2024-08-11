@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from typing import Annotated
 import models
 
-url_database='postgresql://sync:async@localhost:5432/socials'
+url_database='postgresql://postgres.tiqriynlomatzjzpqkbf:LZRmYtcQOg77uMUY@aws-0-ap-south-1.pooler.supabase.com:6543/postgres'
 engine=create_engine(url_database)
 sessionlocal=sessionmaker(autocommit=False,autoflush=False,bind=engine)
 
