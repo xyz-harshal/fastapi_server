@@ -8,7 +8,7 @@ router=APIRouter()
 Base.metadata.create_all(bind=engine)
 
 @router.post("/login",response_model=userResMod)
-async def login(req:userReqMod,db:db_dependancy): 
+async def login(req:userReqMod,db:db_dependancy):
     user=db.query(Peoples)
     findUser=user.filter(Peoples.email==req.email).first()
     if findUser:

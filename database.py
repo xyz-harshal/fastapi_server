@@ -4,8 +4,10 @@ from fastapi import Depends
 from sqlalchemy.ext.declarative import declarative_base
 from typing import Annotated
 import models
-
-url_database='postgresql://postgres.tiqriynlomatzjzpqkbf:LZRmYtcQOg77uMUY@aws-0-ap-south-1.pooler.supabase.com:6543/postgres'
+import os
+from dotenv import load_dotenv
+load_dotenv()
+url_database=os.getenv("DATABASE_URL")
 engine=create_engine(url_database)
 sessionlocal=sessionmaker(autocommit=False,autoflush=False,bind=engine)
 
