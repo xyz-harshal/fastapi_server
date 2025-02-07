@@ -2,18 +2,10 @@ from fastapi import APIRouter, HTTPException
 from supabase import create_client, Client
 import os
 from auth import hashed_pass, verify_hash_pass, jwt_encode
-from pydantic import BaseModel
 import uuid
+from models import userReqMod,userResMod
 
 router = APIRouter()
-
-class UserReqMod(BaseModel):
-    email: str
-    password: str
-
-class UserResMod(BaseModel):
-    error: bool
-    token: str
 
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
@@ -34,7 +26,6 @@ async def register(req: UserReqMod):
     response = supabase.table("peoples").select("id").eq("email", req.email).execute()
     if response.data:
         raise HTTPException(status_code=400, detail="User already exists")
-    
     hash_pass = hashed_pass(req.password)
     response = supabase.table("peoples").insert({
         "id": str(uuid.uuid4()),

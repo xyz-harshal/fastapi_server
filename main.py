@@ -1,7 +1,7 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes.authRoute import router as auth_router  # Import routes
-import os
+from routes.authRoute import router as auth_router
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -22,4 +22,4 @@ app.include_router(auth_router, prefix="/auth")  # Auth routes
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
