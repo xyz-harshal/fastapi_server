@@ -3,7 +3,6 @@ from sqlalchemy.orm import sessionmaker,Session
 from fastapi import Depends
 from sqlalchemy.ext.declarative import declarative_base
 from typing import Annotated
-import models
 import os
 from dotenv import load_dotenv
 load_dotenv()
