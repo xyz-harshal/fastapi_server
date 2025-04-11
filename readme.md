@@ -1,4 +1,4 @@
-# FastAPI Server Setup
+# FastAPI Server Project Template Starters
 
 This guide covers setting up the FastAPI backend, managing dependencies, and running the server in different environments.
 
@@ -122,5 +122,4 @@ export DATABASE_URL="postgresql://user:password@localhost:5432/mydatabase"
 
 ## ✨ Author
 
-Maintained by [xyz\_sync] 🚀
-
+Maintained by [xyz\_sync](https://xyz-sync.vercel.app/) 🚀
