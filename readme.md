@@ -47,18 +47,20 @@ pip install -r requirements.txt
 
 ### 4️⃣ **Set Up Environment Variables**
 
-Create a `.env` file in the root directory and add:
+Create a `.env` file in the root directory with the following variables:
 
 ```
+SUPABASE_URL=your-supabase-url
+SUPABASE_KEY=your-supabase-key
+SUPABASE_SERVICE_KEY=your-supabase-service-key
+GROQ_API_KEY=your-groq-api-key
 SECRET_KEY=your-secret-key
-DATABASE_URL=postgresql://user:password@localhost:5432/mydatabase
+ALGORITHM=HS256
 ```
 
-Load environment variables automatically using:
+> ⚠️ **IMPORTANT**: Never commit your `.env` file to version control. Add it to your `.gitignore` file.
 
-```sh
-pip install python-dotenv
-```
+---
 
 ## 🎯 Running the Backend Server
 
@@ -69,8 +71,6 @@ uvicorn main:app --reload
 ```
 
 > `--reload` enables auto-restart on code changes.
-
-###
 
 ---
 
@@ -85,7 +85,7 @@ Once the server is running, visit:
 
 ## 🛠️ Additional Commands
 
-### **Freeze Dependencies (Update ************************************************************************`requirements.txt`************************************************************************)**
+### **Freeze Dependencies (Update `requirements.txt`)**
 
 ```sh
 pip freeze > requirements.txt
